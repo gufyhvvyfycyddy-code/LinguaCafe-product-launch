@@ -12,14 +12,14 @@ Current direction:
 
 ## Release
 
-- Web/PC: most complete implementation; fresh current-baseline browser acceptance still required.
+- Web/PC: most complete implementation; fresh current-baseline browser acceptance is still required until a live run is recorded.
 - Android: native implementation exists; current signed release/AAB/Play Console evidence is incomplete.
 - iOS: native implementation exists; macOS/Xcode/signing/device/TestFlight/App Store evidence is incomplete.
 - Server: candidate first-user topology is documented, but no completed public production deployment is claimed.
 
 ## Current product/launch evidence
 
-Documents now cover:
+Documents cover:
 - target-user hypotheses;
 - 10 → 50 → 100 user-validation ladder;
 - first-user server options;
@@ -32,20 +32,37 @@ Documents now cover:
 
 No claim is made that real retention or product-market fit has already been proven.
 
-## Cross-repository P0s
+## Cross-repository security / launch blockers
 
 ### Public source environment hygiene
+
 Tracked environment-configuration paths remain in the public source tree.
+
+Current project rules do not authorize reading or modifying .env files. Secret values are not copied into public review documents.
 
 See architecture Issue #1.
 
 ### Production dependency security
-Dependabot currently reports 115 open alerts on the source default branch, including one Critical Laravel Reverb advisory.
 
-A bounded remediation PR is open:
-https://github.com/gufyhvvyfycyddy-code/LinguaCafe-local/pull/24
+Source default-branch Dependabot snapshot after merged source PR #25:
+- 113 open alerts;
+- Critical: 0;
+- High: 44;
+- Moderate: 59;
+- Low: 10.
+
+The former Critical Laravel Reverb advisory was removed by source PR #25:
+https://github.com/gufyhvvyfycyddy-code/LinguaCafe-local/pull/25
+
+The remaining dependency debt is still a launch-readiness problem. It must be triaged by shipped-path reachability and compatibility rather than bulk-upgraded.
 
 See architecture Issue #23.
+
+### Browser / platform evidence
+
+- Web/PC needs a current live browser regression on the frozen source baseline.
+- Android still needs current release artifact/signing/device/Play evidence.
+- iOS still needs reproducible fresh-checkout preparation plus macOS/Xcode/signing/device/TestFlight/App Store evidence.
 
 ## External gates
 
@@ -64,4 +81,4 @@ Still unproven:
 - support workload;
 - investor-quality traction.
 
-The next product milestone should be real-user evidence, not adding a large new feature surface.
+The next product milestone should be real-user evidence, not a large new feature surface.
