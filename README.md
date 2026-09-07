@@ -10,14 +10,15 @@ LinguaCafe 的公开产品上线、运营、增长、商业化和非编程困难
 
 ## 从这里开始
 
-1. REVIEW_START_HERE.md
-2. CURRENT_STATUS.md
-3. ROADMAP.md
-4. docs/TARGET_USERS.md
-5. docs/LAUNCH_READINESS.md
-6. docs/APP_STORES.md
-7. docs/GROWTH_AND_MARKETING.md
-8. docs/INVESTOR_READINESS.md
+1. [FINAL_REVIEW_HANDOFF.md](https://github.com/gufyhvvyfycyddy-code/LinguaCafe-architecture-review/blob/main/FINAL_REVIEW_HANDOFF.md) — 三仓总交接
+2. REVIEW_START_HERE.md
+3. CURRENT_STATUS.md
+4. ROADMAP.md
+5. docs/TARGET_USERS.md
+6. docs/LAUNCH_READINESS.md
+7. docs/APP_STORES.md
+8. docs/GROWTH_AND_MARKETING.md
+9. docs/INVESTOR_READINESS.md
 
 ## 最终目标
 
