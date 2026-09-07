@@ -1,0 +1,75 @@
+name: Product / launch difficulty
+description: Record a concrete launch, hosting, app-store, user, growth, legal or commercial difficulty.
+title: "[Launch Review] "
+body:
+  - type: textarea
+    id: phenomenon
+    attributes:
+      label: 现象 / Problem
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: 对真实用户或上线的影响 / Impact
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 当前证据 / Evidence
+      description: Product evidence, official policy, user feedback, cost quote, or current repository fact.
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Hosting / operations
+        - Apple / App Store
+        - Google Play
+        - Privacy / legal
+        - Support
+        - User research / onboarding
+        - Growth / marketing
+        - Pricing / finance
+        - Content / licensing
+        - Investor / fundraising
+        - Analytics
+        - Mixed
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 — launch blocker
+        - P1 — high-impact
+        - P2 — important follow-up
+        - P3 — optional
+        - External Gate
+        - Research
+    validations:
+      required: true
+  - type: textarea
+    id: direction
+    attributes:
+      label: 解决方向 / Direction
+  - type: textarea
+    id: next
+    attributes:
+      label: 下一动作 / Next action
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 依赖 / Dependencies
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收证据 / Acceptance evidence
+    validations:
+      required: true
