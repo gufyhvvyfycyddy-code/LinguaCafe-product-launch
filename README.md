@@ -5,6 +5,7 @@ LinguaCafe 的公开产品上线、运营、增长、商业化和非编程困难
 源码正本：
 - https://github.com/gufyhvvyfycyddy-code/LinguaCafe-local
 - 当前冻结审查基线：`6989ed27c933716f9069bb9b14fba92624081fc4`
+- 当前源码 `master` 还包含冻结基线之后的 PR #30/#31/#32/#34 修复与发布文档；产品判断继续区分“冻结功能验收证据”和“后续源码事实”。
 
 架构审查：
 - https://github.com/gufyhvvyfycyddy-code/LinguaCafe-architecture-review

@@ -4,6 +4,8 @@
 
 - Frozen application-code review baseline: `6989ed27c933716f9069bb9b14fba92624081fc4`
 - Source PR #26 merged the reproducible Web build and native `fsrs-rs-php` production-image fix.
+- Post-baseline current-source fixes include PR #30 (reproducible Python tokenizer image), PR #31 (registration password-confirmation validation synchronization), PR #32 (targeted axios + moment runtime dependency updates), and PR #34 (publication-state documentation). Current source publication sync is represented by merge commit `abba49dd9723170d861839b478dad9224505ea8c`.
+- Architecture Issues #25 and #26 are resolved by source PR #30 and PR #31 respectively.
 
 ## Product
 
@@ -74,10 +76,10 @@ See architecture Issue #23.
 ### Browser / platform evidence
 
 - Web/PC current-baseline live browser evidence exists for the core Reader → WordSense → sense Review chain and adjacent Home/Library/Vocabulary/Settings routes. This does not prove every admin/destructive path or a public production deployment.
+- Python tokenizer clean-build reproducibility is resolved post-baseline by source PR #30; see closed architecture Issue #25.
+- Registration password-confirmation validation synchronization is resolved post-baseline by source PR #31; see closed architecture Issue #26.
 - Android still needs current release artifact/signing/device/Play evidence.
 - iOS still needs reproducible fresh-checkout preparation plus macOS/Xcode/signing/device/TestFlight/App Store evidence.
-- Python tokenizer clean-build reproducibility remains open because a fresh image still depends on live spaCy model downloads; see architecture Issue #25.
-- Registration can transiently show a password-mismatch state despite successful account creation; see architecture Issue #26.
 
 ## External gates
 
