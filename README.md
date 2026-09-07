@@ -1,2 +1,34 @@
-# LinguaCafe-product-launch
-LinguaCafe public product launch, operations, growth and commercialization workspace
+# LinguaCafe Product Launch
+
+LinguaCafe 的公开产品上线、运营、增长、商业化和非编程困难审查仓。
+
+源码正本：
+- https://github.com/gufyhvvyfycyddy-code/LinguaCafe-local
+
+架构审查：
+- https://github.com/gufyhvvyfycyddy-code/LinguaCafe-architecture-review
+
+## 从这里开始
+
+1. REVIEW_START_HERE.md
+2. CURRENT_STATUS.md
+3. ROADMAP.md
+4. docs/TARGET_USERS.md
+5. docs/LAUNCH_READINESS.md
+6. docs/APP_STORES.md
+7. docs/GROWTH_AND_MARKETING.md
+8. docs/INVESTOR_READINESS.md
+
+## 最终目标
+
+让 LinguaCafe 从“可以开发的项目”变成“真实用户可以长期使用的产品”：
+
+- 能稳定部署；
+- Web/PC、Android、iOS 的状态清楚；
+- 隐私、账号删除、备份、客服和事故处理可执行；
+- 获得第一批种子用户；
+- 用真实留存和反馈决定产品；
+- 找到适合的宣传渠道和商业模式；
+- 如果未来接触投资人，有真实数据而不是只有功能清单。
+
+本仓的问题数量不设上限。服务器、商店、运营、增长、宣传、客服、资金等非编程问题与代码问题同等重要。
