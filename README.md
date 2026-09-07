@@ -4,6 +4,7 @@ LinguaCafe 的公开产品上线、运营、增长、商业化和非编程困难
 
 源码正本：
 - https://github.com/gufyhvvyfycyddy-code/LinguaCafe-local
+- 当前冻结审查基线：`6989ed27c933716f9069bb9b14fba92624081fc4`
 
 架构审查：
 - https://github.com/gufyhvvyfycyddy-code/LinguaCafe-architecture-review
@@ -25,6 +26,7 @@ LinguaCafe 的公开产品上线、运营、增长、商业化和非编程困难
 让 LinguaCafe 从“可以开发的项目”变成“真实用户可以长期使用的产品”：
 
 - 能稳定部署；
+- 当前 Web/PC Reader → WordSense → sense Review 主链已经有真实 Chrome + 原生 FSRS Docker 证据；
 - Web/PC、Android、iOS 的状态清楚；
 - 隐私、账号删除、备份、客服和事故处理可执行；
 - 获得第一批种子用户；

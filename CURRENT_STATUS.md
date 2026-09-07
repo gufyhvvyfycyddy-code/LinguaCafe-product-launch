@@ -1,5 +1,10 @@
 # Current Status — 2026-09-07
 
+## Source baseline
+
+- Frozen application-code review baseline: `6989ed27c933716f9069bb9b14fba92624081fc4`
+- Source PR #26 merged the reproducible Web build and native `fsrs-rs-php` production-image fix.
+
 ## Product
 
 Current direction:
@@ -12,7 +17,7 @@ Current direction:
 
 ## Release
 
-- Web/PC: most complete implementation; fresh current-baseline browser acceptance is still required until a live run is recorded.
+- Web/PC: most complete implementation; current-baseline real Chrome acceptance is recorded for login, Home, Library/import, Reader, dictionary lookup, WordSense creation, Vocabulary, sense Review and Settings. The final production Web image loaded native `fsrs-rs-php`; interval preview and rating returned HTTP 200 with exactly one ReviewLog for the final smoke card.
 - Android: native implementation exists; current signed release/AAB/Play Console evidence is incomplete.
 - iOS: native implementation exists; macOS/Xcode/signing/device/TestFlight/App Store evidence is incomplete.
 - Server: candidate first-user topology is documented, but no completed public production deployment is claimed.
@@ -44,12 +49,20 @@ See architecture Issue #1.
 
 ### Production dependency security
 
-Source default-branch Dependabot snapshot after merged source PR #25:
-- 113 open alerts;
+Source default-branch Dependabot snapshot after merged source PR #26:
+- 137 open alerts;
 - Critical: 0;
-- High: 44;
-- Moderate: 59;
-- Low: 10.
+- High: 48;
+- Medium: 73;
+- Low: 16.
+
+Manifest split:
+- root package-lock.json: 46;
+- composer.lock: 49;
+- experimental resources/vue3/package-lock.json: 41;
+- mobile/package-lock.json: 1.
+
+The increase from 113 to 137 follows the addition of the root package lock, which exposes the previously unlocked root frontend dependency graph to Dependabot. It is increased visibility, not proof that PR #26 introduced 24 new exploitable runtime vulnerabilities.
 
 The former Critical Laravel Reverb advisory was removed by source PR #25:
 https://github.com/gufyhvvyfycyddy-code/LinguaCafe-local/pull/25
@@ -60,9 +73,11 @@ See architecture Issue #23.
 
 ### Browser / platform evidence
 
-- Web/PC needs a current live browser regression on the frozen source baseline.
+- Web/PC current-baseline live browser evidence exists for the core Reader → WordSense → sense Review chain and adjacent Home/Library/Vocabulary/Settings routes. This does not prove every admin/destructive path or a public production deployment.
 - Android still needs current release artifact/signing/device/Play evidence.
 - iOS still needs reproducible fresh-checkout preparation plus macOS/Xcode/signing/device/TestFlight/App Store evidence.
+- Python tokenizer clean-build reproducibility remains open because a fresh image still depends on live spaCy model downloads; see architecture Issue #25.
+- Registration can transiently show a password-mismatch state despite successful account creation; see architecture Issue #26.
 
 ## External gates
 

@@ -17,7 +17,7 @@ LinguaCafe 自己的差异：
 ## 2. 当前上线状态
 
 - 源码已公开，但公开安全卫生仍有 P0 待处理。
-- Web/PC 功能最完整。
+- Web/PC 功能最完整；冻结基线 `6989ed27c933716f9069bb9b14fba92624081fc4` 已完成 Reader → WordSense → sense Review 主链的真实 Chrome 验收，并验证正式 Docker 镜像加载原生 FSRS。
 - Android 工程存在，Play Store readiness 未重新验证。
 - iOS 工程和上架材料存在，但 macOS/Xcode/签名/TestFlight/App Store 仍是外部能力 Gate。
 - 还没有完成面向真实用户的服务器部署、公开测试、增长和商业验证闭环。
