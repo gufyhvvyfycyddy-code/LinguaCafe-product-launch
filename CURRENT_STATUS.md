@@ -4,8 +4,9 @@
 
 - Frozen application-code review baseline: `6989ed27c933716f9069bb9b14fba92624081fc4`
 - Source PR #26 merged the reproducible Web build and native `fsrs-rs-php` production-image fix.
-- Post-baseline current-source fixes include PR #30 (reproducible Python tokenizer image), PR #31 (registration password-confirmation validation synchronization), PR #32 (targeted axios + moment runtime dependency updates), and PR #34 (publication-state documentation). Current source publication sync is represented by merge commit `abba49dd9723170d861839b478dad9224505ea8c`.
-- Architecture Issues #25 and #26 are resolved by source PR #30 and PR #31 respectively.
+- Post-baseline current-source fixes include PR #30 (reproducible Python tokenizer image), PR #31 (registration password-confirmation validation), PR #32 (targeted browser runtime dependencies), PR #33 (compatible PHP security refresh), PR #34/#35 (publication synchronization), PR #36/#37 (tokenizer/IIS CodeQL remediation), PR #39 (unused Vue3 experiment removal), and PR #40 (BrowserSync 3 development-tool update).
+- Current product-review status is synchronized through source merge commit `2abc82df754525c19733382200aaf72a930d436a`.
+- Architecture dependency P0 Issue #23 and security Issues #25/#26/#28/#29 are resolved.
 
 ## Product
 
@@ -51,33 +52,30 @@ See architecture Issue #1.
 
 ### Production dependency security
 
-Source default-branch Dependabot snapshot after merged source PR #26:
-- 137 open alerts;
+Current default-branch Dependabot snapshot after source PR #40:
+- 28 open alerts;
 - Critical: 0;
-- High: 48;
-- Medium: 73;
-- Low: 16.
+- High: 6;
+- Medium: 18;
+- Low: 4.
 
 Manifest split:
-- root package-lock.json: 46;
-- composer.lock: 49;
-- experimental resources/vue3/package-lock.json: 41;
-- mobile/package-lock.json: 1.
+- root `package-lock.json`: 24;
+- `composer.lock`: 2;
+- `docker/python/requirements.lock.txt`: 1;
+- `mobile/package-lock.json`: 1;
+- the unused experimental Vue3 manifest was removed by source PR #39.
 
-The increase from 113 to 137 follows the addition of the root package lock, which exposes the previously unlocked root frontend dependency graph to Dependabot. It is increased visibility, not proof that PR #26 introduced 24 new exploitable runtime vulnerabilities.
+Source PR #33 reduced compatible PHP advisories while preserving current behavior (Unit 745/745; Feature 2882/2882). Source PR #40 removed the old BrowserSync/localtunnel axios chain. Current CodeQL has 0 open alerts.
 
-The former Critical Laravel Reverb advisory was removed by source PR #25:
-https://github.com/gufyhvvyfycyddy-code/LinguaCafe-local/pull/25
-
-The remaining dependency debt is still a launch-readiness problem. It must be triaged by shipped-path reachability and compatibility rather than bulk-upgraded.
-
-See architecture Issue #23.
+Architecture Issue #23 is closed because all six remaining High alerts now have an explicit current non-reachability, accepted development-tool risk, or future upgrade gate in the architecture review's `DEPENDENCY_HIGH_RISK_DISPOSITION_2026-09-07.md`. Medium/Low debt and planned Laravel 12 / Vue3-Vuetify3 modernization remain visible follow-up work.
 
 ### Browser / platform evidence
 
 - Web/PC current-baseline live browser evidence exists for the core Reader → WordSense → sense Review chain and adjacent Home/Library/Vocabulary/Settings routes. This does not prove every admin/destructive path or a public production deployment.
 - Python tokenizer clean-build reproducibility is resolved post-baseline by source PR #30; see closed architecture Issue #25.
 - Registration password-confirmation validation synchronization is resolved post-baseline by source PR #31; see closed architecture Issue #26.
+- Current default-branch CodeQL has 0 open alerts after source PR #36/#37 and subsequent default-branch analysis.
 - Android still needs current release artifact/signing/device/Play evidence.
 - iOS still needs reproducible fresh-checkout preparation plus macOS/Xcode/signing/device/TestFlight/App Store evidence.
 
